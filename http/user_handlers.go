@@ -9,13 +9,13 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
-func initUserHandlers(app *core.App, mux *chi.Mux) {
+func initUserHandlers(app *core.App, mux *chi.Mux, userService services.UserService) {
 	r := chi.NewRouter()
 	mux.Mount("/user", r)
 
 	c := userController{
 		app:     app,
-		service: services.GetUserService(app.DB),
+		service: userService,
 	}
 
 	r.Get("/", c.count)
