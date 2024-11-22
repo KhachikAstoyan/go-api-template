@@ -22,5 +22,5 @@ func main() {
 		DB:     repo,
 	}
 
-	http.InitHandlers(app)
+	http.StartServer(app)
 }

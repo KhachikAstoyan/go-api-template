@@ -9,7 +9,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 )
 
-func InitHandlers(app *core.App) {
+func StartServer(app *core.App) {
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
 
